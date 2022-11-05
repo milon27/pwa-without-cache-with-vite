@@ -12,8 +12,8 @@ export default defineConfig({
       name: "my pwa",
       short_name: "a short name",
       description: "a pwa web app",
-      theme_color: "red",
-      background_color: "red",
+      theme_color: "#1a1a1a",
+      background_color: "#1a1a1a",
       categories: ["test"],
       icons: [
         {
