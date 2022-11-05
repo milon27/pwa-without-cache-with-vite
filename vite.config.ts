@@ -6,12 +6,27 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), VitePWA({
     filename: "m-service-worker.js",
-    selfDestroying: true,
+    // selfDestroying: true,
+    // injectRegister: 'auto',
     manifest: {
+      name: "my pwa",
+      short_name: "a short name",
+      description: "a pwa web app",
+      theme_color: "red",
       background_color: "red",
       categories: ["test"],
-      description: "a pwa web app",
-      name: "my pwa"
+      icons: [
+        {
+          src: 'logo.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'logo-512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     },
     registerType: 'autoUpdate'
   })]

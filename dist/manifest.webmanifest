@@ -1,1 +1,1 @@
-{"name":"my pwa","short_name":"pwa-test-no-cache","start_url":"/","display":"standalone","background_color":"red","lang":"en","scope":"/","categories":["test"],"description":"a pwa web app"}
+{"name":"my pwa","short_name":"a short name","start_url":"/","display":"standalone","background_color":"red","lang":"en","scope":"/","description":"a pwa web app","theme_color":"red","categories":["test"],"icons":[{"src":"logo.png","sizes":"192x192","type":"image/png"},{"src":"logo-512.png","sizes":"512x512","type":"image/png"}]}

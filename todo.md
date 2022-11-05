@@ -1,0 +1,1 @@
+/home/milon27/pwa-without-cache-with-vite/dist

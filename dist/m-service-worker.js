@@ -1,14 +1,1 @@
-
-self.addEventListener('install', function(e) {
-  self.skipWaiting();
-});
-self.addEventListener('activate', function(e) {
-  self.registration.unregister()
-    .then(function() {
-      return self.clients.matchAll();
-    })
-    .then(function(clients) {
-      clients.forEach(client => client.navigate(client.url))
-    });
-});
-    
+if(!self.define){let e,i={};const s=(s,n)=>(s=new URL(s+".js",n).href,i[s]||new Promise((i=>{if("document"in self){const e=document.createElement("script");e.src=s,e.onload=i,document.head.appendChild(e)}else e=s,importScripts(s),i()})).then((()=>{let e=i[s];if(!e)throw new Error(`Module ${s} didn’t register its module`);return e})));self.define=(n,r)=>{const d=e||("document"in self?document.currentScript.src:"")||location.href;if(i[d])return;let o={};const t=e=>s(e,d),l={module:{uri:d},exports:o,require:t};i[d]=Promise.all(n.map((e=>l[e]||t(e)))).then((e=>(r(...e),o)))}}define(["./workbox-30e9d199"],(function(e){"use strict";self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"assets/index.08ff9814.js",revision:null},{url:"assets/index.3fce1f81.css",revision:null},{url:"index.html",revision:"3db5639b899a9e008af43df1a09675ea"},{url:"registerSW.js",revision:"8a184e307398cdb02a64869e87593ae4"},{url:"logo.png",revision:"3663350f7ecd3a07d84847fc01ddd040"},{url:"logo-512.png",revision:"04ddd27dde5ab8080f6bd3c32c771e48"},{url:"manifest.webmanifest",revision:"765d8b00dfe4eb81386d76b3b377d03e"}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("index.html")))}));
