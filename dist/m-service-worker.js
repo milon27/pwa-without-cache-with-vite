@@ -1,1 +1,14 @@
-if(!self.define){let e,s={};const i=(i,n)=>(i=new URL(i+".js",n).href,s[i]||new Promise((s=>{if("document"in self){const e=document.createElement("script");e.src=i,e.onload=s,document.head.appendChild(e)}else e=i,importScripts(i),s()})).then((()=>{let e=s[i];if(!e)throw new Error(`Module ${i} didn’t register its module`);return e})));self.define=(n,r)=>{const o=e||("document"in self?document.currentScript.src:"")||location.href;if(s[o])return;let d={};const t=e=>i(e,o),l={module:{uri:o},exports:d,require:t};s[o]=Promise.all(n.map((e=>l[e]||t(e)))).then((e=>(r(...e),d)))}}define(["./workbox-e0782b83"],(function(e){"use strict";self.addEventListener("message",(e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()})),e.precacheAndRoute([{url:"assets/index.3fce1f81.css",revision:null},{url:"assets/index.f51b0b21.js",revision:null},{url:"index.html",revision:"37de3294233c801d2555df5d6750362f"},{url:"registerSW.js",revision:"8a184e307398cdb02a64869e87593ae4"},{url:"logo.png",revision:"3663350f7ecd3a07d84847fc01ddd040"},{url:"logo-512.png",revision:"04ddd27dde5ab8080f6bd3c32c771e48"},{url:"manifest.webmanifest",revision:"a72e4560d4858385ed98fabf5b1ba77f"}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("index.html")))}));
+
+self.addEventListener('install', function(e) {
+  self.skipWaiting();
+});
+self.addEventListener('activate', function(e) {
+  self.registration.unregister()
+    .then(function() {
+      return self.clients.matchAll();
+    })
+    .then(function(clients) {
+      clients.forEach(client => client.navigate(client.url))
+    });
+});
+    

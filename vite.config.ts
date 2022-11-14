@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), VitePWA({
     filename: "m-service-worker.js",
-    // selfDestroying: true,
+    selfDestroying: true,
     // injectRegister: 'auto',
     manifest: {
       name: "my pwa",
@@ -28,6 +28,6 @@ export default defineConfig({
         }
       ]
     },
-    registerType: 'prompt'
+    registerType: 'autoUpdate'
   })]
 })
